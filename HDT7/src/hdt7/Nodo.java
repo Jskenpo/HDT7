@@ -16,10 +16,11 @@ public class Nodo<K,V> {
     Nodo right;
 
     //constructor de nodo
-    public Nodo(K key, V value) {
+    public Nodo(K key) {
         this.key = key;
         right = null;
         left = null;
         value = null;
+        Root = null;
     }
 }

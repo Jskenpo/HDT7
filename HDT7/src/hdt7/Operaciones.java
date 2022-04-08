@@ -15,6 +15,20 @@ import java.util.ArrayList;
 public class Operaciones {
     Archivo read = new Archivo();
     ArrayList<String> lineas = new ArrayList<String>();
+    ArbolesBinarios<String, String> EnglishTree = new ArbolesBinarios<String, String>();
+    ArbolesBinarios<String, String> FrenchTree = new ArbolesBinarios<String, String>();
+
+    //getters of the trees
+    public ArbolesBinarios<String, String> getEnglishTree() {
+        return EnglishTree;
+    }
+
+    public ArbolesBinarios<String, String> getFrenchTree() {
+        return FrenchTree;
+    }
+
+    
+    
 
     public void settingUp() throws IOException, FileNotFoundException {
         ArrayList <String> Datos = new ArrayList<>();
@@ -36,6 +50,42 @@ public class Operaciones {
             }
         }
     }
+
+    public void treeCreation(){
+
+    ArrayList<String> EnglishArray = new ArrayList<String>();
+    ArrayList<String> SpanishArray = new ArrayList<String>();
+    ArrayList<String> FrenchArray = new ArrayList<String>(); 
+
+    for (int i = 0 ; i < lineas.size() ; i++){
+        String[] palabras = lineas.get(i).split(",");
+        for (int j = 0 ; j < palabras.length ; j++){
+            palabras[j] = palabras[j].toLowerCase();
+            EnglishArray.add(palabras[j]);
+            SpanishArray.add(palabras[j+1]);
+            FrenchArray.add(palabras[j+2]);
+        }
+        // create binary tree with English words
+
+        for (int k = 0 ; k < EnglishArray.size() ; k++){
+            EnglishTree.insert(EnglishArray.get(k), SpanishArray.get(k));
+        }
+
+        // crear arbol binario con palabras en frances 
+        for (int k = 0 ; k < FrenchArray.size() ; k++){
+            FrenchTree.insert(FrenchArray.get(k), SpanishArray.get(k));
+        }
+
+        // print both trees
+        System.out.println("English Tree");
+        EnglishTree.printTree();
+        System.out.println("French Tree");
+        FrenchTree.printTree();
+
+    }
+
+    }
+
 
     
     
