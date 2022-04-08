@@ -14,7 +14,13 @@ public class HDT7 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // pedir al usuario que ingrese la dirección del archivo
+        System.out.println("Ingrese la dirección del archivo");
+        String ruta = System.console().readLine();
+        
+
+
+
     }
     
 }
