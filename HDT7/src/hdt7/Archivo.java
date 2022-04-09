@@ -54,17 +54,38 @@ public class Archivo {
 
     
 
-    //crear método que pida escribir al usuario una linea en el archivo 
-    public static void escribirArchivo(String ruta, String linea) {
-        try {
-            java.io.FileWriter fw = new java.io.FileWriter(ruta, true);
-            java.io.BufferedWriter bw = new java.io.BufferedWriter(fw);
-            bw.write(linea);
-            bw.newLine();
-            bw.close();
-        } catch (Exception e) {
-            System.out.println("Error al escribir en el archivo");
+    //create a method that reads a file line by line given the file name 
+    
+    public ArrayList<String> readFile(String nameFile) throws IOException, FileNotFoundException{
+
+        ArrayList<String> lineas = new ArrayList<String>();
+        // leer el archivo
+        String nombreArchivo = nameFile+".txt";
+        try{
+        FileReader fr = new FileReader(nombreArchivo);
+        BufferedReader br = new BufferedReader(fr);
+        
+        // leer linea por linea
+        String linea = br.readLine();
+        while(linea != null){
+            System.out.println(linea);
+            linea = br.readLine();
+
+            lineas.add(linea);
+            
         }
+        
+        // cerrar el archivo
+        br.close();
+        fr.close();
+        }catch(FileNotFoundException e){
+            System.out.println("El archivo no existe");
+        }catch(IOException e){
+            System.out.println("Error al leer el archivo");
+        }
+
+        return lineas;
+
     }
 
 
