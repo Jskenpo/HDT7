@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="HDT7">
+  <ClassDiagramComponents>
+    <Class name="ArbolesBinarios" package="hdt7" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="root" type="Nodo" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="insert" returnType="void" visibility="public">
+          <Argument type="k" name="key"/>
+          <Argument type="V" name="value"/>
+        </Method>
+        <Method name="search" returnType="V" visibility="public">
+          <Argument type="k" name="key"/>
+        </Method>
+        <Method name="delete" returnType="void" visibility="public">
+          <Argument type="k" name="key"/>
+        </Method>
+        <Method name="getReplacementNode" returnType="Nodo" visibility="public">
+          <Argument type="Nodo" name="replacedNode"/>
+        </Method>
+        <Method name="printTree" returnType="void" visibility="public"/>
+        <Method name="printTree" returnType="void" visibility="public">
+          <Argument type="Nodo" name="focusNode"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Archivo" package="hdt7" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="leerlineas" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="readFile" returnType="ArrayList&lt;String&gt;" visibility="public">
+          <Argument type="String" name="nameFile"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HDT7" package="hdt7" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Nodo" package="hdt7" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="Root" type="Nodo" visibility="package"/>
+        <Field name="key" type="K" visibility="package"/>
+        <Field name="value" type="V" visibility="package"/>
+        <Field name="left" type="Nodo" visibility="package"/>
+        <Field name="right" type="Nodo" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="K" name="key"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Operaciones" package="hdt7" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="read" type="Archivo" visibility="package"/>
+        <Field name="lineas" type="ArrayList&lt;String&gt;" visibility="package"/>
+        <Field name="EnglishTree" type="ArbolesBinarios&lt;String, String&gt;" visibility="package"/>
+        <Field name="FrenchTree" type="ArbolesBinarios&lt;String, String&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getEnglishTree" returnType="ArbolesBinarios&lt;String, String&gt;" visibility="public"/>
+        <Method name="getFrenchTree" returnType="ArbolesBinarios&lt;String, String&gt;" visibility="public"/>
+        <Method name="settingUp" returnType="void" visibility="public"/>
+        <Method name="treeCreation" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="hdt7.Operaciones" target="hdt7.ArbolesBinarios" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Root" source="hdt7.Nodo" target="hdt7.Nodo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="hdt7.ArbolesBinarios" target="hdt7.Nodo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="read" source="hdt7.Operaciones" target="hdt7.Archivo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="left" source="hdt7.Nodo" target="hdt7.Nodo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="right" source="hdt7.Nodo" target="hdt7.Nodo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="root" source="hdt7.ArbolesBinarios" target="hdt7.Nodo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

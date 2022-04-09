@@ -62,7 +62,7 @@ public class Archivo {
         // leer el archivo
         String nombreArchivo = nameFile+".txt";
         try{
-        FileReader fr = new FileReader(nombreArchivo);
+        FileReader fr = new FileReader(nameFile);
         BufferedReader br = new BufferedReader(fr);
         
         // leer linea por linea

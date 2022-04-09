@@ -38,7 +38,8 @@ public class HDT7 {
             System.out.println("3. Translate from a sentence to another language");
             System.out.println("4. delete a node");
             System.out.println("5. modify a node");
-            System.out.println("6. Salir");
+            System.out.println("6. print trees inorder");
+            System.out.println("7. exit");
             int opcion = Integer.parseInt(br.readLine());
 
             switch(opcion){
@@ -100,7 +101,7 @@ public class HDT7 {
                     int  existe = 0;
 
 
-                    //search in the trees if the words in tradiccion exists and breaks the loop if it finds a match with one of the trees
+                    //search in the trees if the words in tradiccion exists and breaks the loop if it finds a match with one of them 
                     for (int i = 0; i < traduccion.size(); i++){
                         String resultado = op.getEnglishTree().search(traduccion.get(i));
                         String resultado2 = op.getFrenchTree().search(traduccion.get(i));
@@ -183,6 +184,27 @@ public class HDT7 {
                             op.getFrenchTree().delete(palabra7);
                             op.getFrenchTree().insert(palabra7, palabra8);
                     }
+                    break;
+                case 6 :
+                    System.out.println("select the language you want to see");
+                    System.out.println("1. English");
+                    System.out.println("2. French");
+                    int opcion4 = Integer.parseInt(br.readLine());
+                    switch(opcion4){
+                        case 1 :
+                            System.out.println("English");
+                            op.getEnglishTree().printTree();
+                        break;
+                        case 2 :
+                            System.out.println("French");
+                            op.getFrenchTree().printTree();
+                        break;
+                }
+                case 7 :
+                    System.out.println("closing the program...");
+                    salir = true;
+                    break;
+                    
             }
 
         }while (!salir);

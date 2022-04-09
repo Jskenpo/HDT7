@@ -43,13 +43,17 @@ public class Operaciones {
         }
 
         for (int i = 0; i < Datos.size(); i++) {
-            String[] palabras = Datos.get(i).split(",");
-            for (int j = 0; j < palabras.length; j++) {
-                palabras[j] = palabras[j].toLowerCase();
-                lineas.add(palabras[j]);
+            if (Datos.get(i) != null) {
+                String[] palabras = Datos.get(i).split(",");
+                for (int j = 0; j < palabras.length; j++) {
+                    palabras[j] = palabras[j].toLowerCase();
+                    lineas.add(palabras[j]);
+                }
+            }
+                
             }
         }
-    }
+    
 
     public void treeCreation(){
 
@@ -58,31 +62,29 @@ public class Operaciones {
     ArrayList<String> FrenchArray = new ArrayList<String>(); 
 
     for (int i = 0 ; i < lineas.size() ; i++){
-        String[] palabras = lineas.get(i).split(",");
-        for (int j = 0 ; j < palabras.length ; j++){
-            palabras[j] = palabras[j].toLowerCase();
-            EnglishArray.add(palabras[j]);
-            SpanishArray.add(palabras[j+1]);
-            FrenchArray.add(palabras[j+2]);
-        }
-        // create binary tree with English words
-
-        for (int k = 0 ; k < EnglishArray.size() ; k++){
-            EnglishTree.insert(EnglishArray.get(k), SpanishArray.get(k));
-        }
-
-        // crear arbol binario con palabras en frances 
-        for (int k = 0 ; k < FrenchArray.size() ; k++){
-            FrenchTree.insert(FrenchArray.get(k), SpanishArray.get(k));
-        }
-
-        // print both trees
-        System.out.println("English Tree");
-        EnglishTree.printTree();
-        System.out.println("French Tree");
-        FrenchTree.printTree();
+        EnglishArray.add(lineas.get(i));
+        i = i+1;
+        SpanishArray.add(lineas.get(i));
+        i = i+1;
+        FrenchArray.add(lineas.get(i));
 
     }
+    // create binary tree with English words
+
+    for (int k = 0 ; k < EnglishArray.size() ; k++){
+        EnglishTree.insert(EnglishArray.get(k), SpanishArray.get(k));
+    }
+
+    // crear arbol binario con palabras en frances 
+    for (int k = 0 ; k < FrenchArray.size() ; k++){
+        FrenchTree.insert(FrenchArray.get(k), SpanishArray.get(k));
+    }
+
+    // print both trees
+    System.out.println("English Tree");
+    EnglishTree.printTree();
+    System.out.println("French Tree");
+    FrenchTree.printTree();
 
     }
 
