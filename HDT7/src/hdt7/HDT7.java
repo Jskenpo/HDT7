@@ -199,7 +199,9 @@ public class HDT7 {
                             System.out.println("French");
                             op.getFrenchTree().printTree();
                         break;
-                }
+                    }
+                    break;
+                    
                 case 7 :
                     System.out.println("closing the program...");
                     salir = true;

@@ -53,18 +53,18 @@ public class ArbolesBinarios<k,V> {
 
     //search a node in a binary tree with a given key 
     public V search(k key) {
-        Nodo focusNode = root;
-        while (focusNode.key != key) {
-            if (((String) key ).compareTo((String)focusNode.key) < 0) {
-                focusNode = focusNode.left;
+        Nodo current = root;
+        while (current != null) {
+            if (((String) key).compareTo((String) current.key) == 0) {
+                return (V) current.value;
+            } else if (((String) key).compareTo((String) current.key) < 0) {
+                current = current.left;
             } else {
-                focusNode = focusNode.right;
-            }
-            if (focusNode == null) {
-                return null;
+                current = current.right;
             }
         }
         return null;
+        
     }
 
     // delete a node from the binary tree
