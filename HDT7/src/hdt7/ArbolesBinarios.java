@@ -68,6 +68,8 @@ public class ArbolesBinarios<k,V> {
     }
 
     // delete a node from the binary tree
+    // delete a node from the binary tree knowing the key
+    
 
     public void delete(k key) {
         Nodo focusNode = root;

@@ -158,6 +158,7 @@ public class HDT7 {
                         op.getFrenchTree().delete(palabra4);
                         break;
                 }
+                break;
                     
                 case 5 :
                     //delete and adds a new node 
