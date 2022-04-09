@@ -4,3 +4,4 @@ El objetivo principal del proyectoe es buscar palabras y sus traducciones, adem√
 ## UML (Diagrama de clases )
 ![image](https://user-images.githubusercontent.com/85528027/162552199-56de6eb9-22ae-4c16-9bfe-c147cd395cb8.png)
 ## Pruebas Unitarias 
+![image](https://user-images.githubusercontent.com/85528027/162555821-2b408af0-9e59-4635-96d8-8796bcbb82cc.png)
