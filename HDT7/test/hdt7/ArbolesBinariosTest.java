@@ -40,7 +40,7 @@ public class ArbolesBinariosTest {
      * Test of insert method, of class ArbolesBinarios.
      */
     @Test
-    public void testInsert() {
+    public void testInsertar() {
         System.out.println("insert");
         Object key = "hola";
         Object value = "saludo";
@@ -57,7 +57,7 @@ public class ArbolesBinariosTest {
      * Test of search method, of class ArbolesBinarios.
      */
     @Test
-    public void testSearch() {
+    public void testBuscar() {
         System.out.println("search");
         Object key = "hola";
         Object value = "saludo";
@@ -70,22 +70,26 @@ public class ArbolesBinariosTest {
         }
         
     }
-
-
+    
     /**
-     * Test of printTree method, of class ArbolesBinarios.
+     * Test of delete method, of class ArbolesBinarios.
      */
     @Test
-    public void testPrintTree_0args() {
-        System.out.println("printTree");
+    public void testEliminar() {
+        System.out.println("delete");
         Object key = "hola";
         Object value = "saludo";
         ArbolesBinarios instance = new ArbolesBinarios();
         instance.insert(key, value);
-        instance.printTree();
-        // TODO review the generated test code and remove the default call to fail.
+        instance.delete(key);
+        if (instance.root != null) {
+            fail("The test case is a prototype.");
+        }
         
     }
+
+
+   
 
     
     
