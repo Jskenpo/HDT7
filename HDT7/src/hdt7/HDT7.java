@@ -49,6 +49,14 @@ public class HDT7 {
                     String result = op.getEnglishTree().search(palabra);
                     if (result == null){
                         System.out.println("The word doesn't exist");
+                        System.out.println("Do you want to add it? (y/n)");
+                        String respuesta = br.readLine();
+                        if (respuesta.equals("y")){
+                            System.out.println("Enter the translation");
+                            String traduccion = br.readLine();
+                            op.getEnglishTree().insert(palabra, traduccion);
+                            System.out.println("The word has been added");
+                        }
                     }
                     else{
                         System.out.println(result);
@@ -61,6 +69,14 @@ public class HDT7 {
                     String result2 = op.getFrenchTree().search(palabra2);
                     if (result2 == null){
                         System.out.println("The word doesn't exist");
+                        System.out.println("Do you want to add it? (y/n)");
+                        String respuesta2 = br.readLine();
+                        if (respuesta2.equals("y")){
+                            System.out.println("Enter the translation");
+                            String traduccion2 = br.readLine();
+                            op.getFrenchTree().insert(palabra2, traduccion2);
+                            System.out.println("The word has been added");
+                        }
                     }
                     else{
                         System.out.println(result2);
